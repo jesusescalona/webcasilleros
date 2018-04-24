@@ -1,0 +1,117 @@
+/* Class Styles */
+	
+.txtTituloC{
+	font:11px Tahoma, Arial, Verdana, sans-serif;
+	color:#FFFFFF;
+	text-align:center;
+	font-weight:bold;
+	font-style:normal;
+	letter-spacing:.1em;
+	margin-top:0px;	
+	}
+	
+.txtTituloJ{
+	font:11px Tahoma, Arial, Verdana, sans-serif;
+	color:#FFFFFF;
+	text-align:justify;
+	font-weight:bold;
+	font-style:normal;
+	letter-spacing:.1em;
+	margin-top:0px;	
+	}
+	
+.txtTextoJ{
+	font:11px Tahoma, Arial, Verdana, sans-serif;
+	color:#7AC2FF;
+	text-align:justify;
+	font-style:normal;
+	letter-spacing:.1em;
+	margin-top:0px;	
+	}
+
+.txtTexto{
+	font:11px Tahoma, Arial, Verdana, sans-serif;
+	color:#000000;
+	font-style:normal;
+	letter-spacing:.1em;
+	margin-top:0px;	
+	}
+	
+.txtTextoI{
+	font:11px Tahoma, Arial, Verdana, sans-serif;
+	color:#006699;
+	text-align:right;
+	font-style:normal;
+	/*letter-spacing:.1em;*/
+	margin-right:5px;
+	margin-top:0px;
+	font-weight:bold;
+	}
+	
+.txtTextoBJ{
+	font:13px Tahoma, Arial, Verdana, sans-serif;
+	color:#7AC2FF;
+	text-align:justify;
+	font-style:normal;
+	letter-spacing:.1em;
+	margin-top:0px;	
+	}
+
+.txtTextoNJ{
+	font:13px Tahoma, Arial, Verdana, sans-serif;
+	color:#000000;
+	text-align:justify;
+	font-style:normal;
+	letter-spacing:.1em;
+	margin-top:0px;	
+	}	
+
+a {
+	/*color: #CC3300;*/
+	font:13px Tahoma, Arial, Verdana, sans-serif;
+	color:#7AC2FF;
+	text-align:justify;
+	text-decoration:underline;
+	font-weight:bold;
+	}
+	
+a:hover {
+	/*color: #FF3300;*/
+	font:13px Tahoma, Arial, Verdana, sans-serif;
+	color:#7AC2FF;
+	text-align:justify;
+	text-decoration:none;
+	font-weight:bold;
+	}
+	
+.btnAccion{
+        font-size:10px;
+        font-family:Verdana,Helvetica;
+        font-weight:bold;
+        color:white;
+        background:#638cb5;
+        border:0px;
+        width:73px;
+        height:19px;
+		margin-right:17px;
+		margin-bottom:2px;
+       }
+	   
+.btnClose{
+        font-size:10px;
+        font-family:Verdana,Helvetica;
+        font-weight:bold;
+        color:white;
+        background:#638cb5;
+        border:0px;
+        width:80px;
+        height:19px;
+		margin-right:17px;
+		margin-bottom:2px;
+       }
+	   
+.txtCajas{
+        height:13px;
+		margin-right:17px;
+		margin-bottom:1px;
+       }
