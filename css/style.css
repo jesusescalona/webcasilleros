@@ -1,0 +1,196 @@
+body {
+  background: transparent !important;
+}
+body div#ascrail2000 {
+  background: transparent !important;
+}
+body div#ascrail2000 > div {
+  background: transparent !important;
+}
+a {
+  color: #58bff6;
+  text-decoration: none;
+}
+a:hover {
+  color: #aaaaaa;
+}
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.clear-fix {
+  clear: both;
+}
+.logo-active {
+  fill: #44aacc !important;
+}
+#formWrapper {
+  /*background: rgba(0,0,0,.2);*/
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .3s ease;
+}
+.darken-bg {
+  background: rgba(0, 0, 0, 0.5) !important;
+  transition: all .3s ease;
+}
+div#form {
+  position: absolute;
+  width: 360px;
+  height: 320px;
+  height: auto;
+  background-color: white;
+  margin: auto;
+  border-radius: 5px;
+  padding: 10px 20px;
+  left: 50%;
+  top: 50%;
+  margin-left: -180px;
+  margin-top: -200px;
+}
+div.form-item {
+  position: relative;
+  display: block;
+  margin-bottom: 30px;
+}
+input {
+  transition: all .2s ease;
+}
+input.form-style {
+  color: #8a8a8a;
+  display: block;
+  width: 90%;
+  height: 44px;
+  padding: 5px 5%;
+  border: 1px solid #cccccc;
+  -moz-border-radius: 27px;
+  -webkit-border-radius: 27px;
+  border-radius: 27px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: white;
+  font-family: 'HelveticaNeue', 'Arial', sans-serif;
+  font-size: 105%;
+  letter-spacing: .8px;
+}
+div.form-item .form-style:focus {
+  outline: none;
+  border: 1px solid #58bff6;
+  color: #58bff6;
+}
+div.form-item p.formLabel {
+  position: absolute;
+  left: 26px;
+  top: 16px;
+  transition: all .4s ease;
+  color: #bbbbbb;
+}
+.formTop {
+  top: -22px !important;
+  left: 26px;
+  background-color: white;
+  padding: 0 5px;
+  font-size: 14px;
+  color: #58bff6 !important;
+}
+.formStatus {
+  color: #8a8a8a !important;
+}
+input[type="submit"].login {
+  float: right;
+  width: 112px;
+  height: 50px!important;
+  -moz-border-radius: 19px;
+  -webkit-border-radius: 19px;
+  border-radius: 29px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #186ea2;
+  border: 1px solid #186ea2;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+input[type="submit"].login:hover {
+  background-color: white;
+  border: 1px solid #55b1df;
+  color: #55b1df;
+  cursor: pointer;
+}
+input[type="submit"].login:focus {
+  outline: none;
+}
+#team {
+  padding: 6rem 0 !important;
+}
+#contact {
+  padding-top: 4 !important;
+}
+#comprass {
+  padding: 0 !important;
+}
+.questions #comprass,
+.conditions #comprass {
+  padding-top: 6rem !important;
+}
+.text-over-video {
+  bottom: 4rem !important;
+}
+.header-text {
+  padding-bottom: 0 !important;
+}
+.header-text h1 {
+  position: relative !important;
+  padding-bottom: 30px !important;
+}
+.header-text p {
+  padding-top: 0 !important;
+  padding-bottom: 20px !important;
+}
+.columns label,
+.columns .txtTituloJ {
+  color: white !important;
+}
+.contact-wrap span,
+.contact-wrap label,
+.contact-wrap small {
+  color: white !important;
+  display: inline-block !important;
+}
+.sixteen .header-text p,
+.sixteen .header-text h1 {
+  color: black !important;
+}
+.sixteen .header-text h1 {
+  font-weight: bold !important;
+}
+.sixteen .header-text p {
+  font-size: 1.3rem !important;
+}
+#contact .sixteen .header-text p,
+#contact .sixteen .header-text h1 {
+  color: white !important;
+}
+#contact .sixteen .header-text h1 {
+  font-weight: bold !important;
+}
+#contact .sixteen .header-text p {
+  font-size: 1.3rem !important;
+}
+.eight .header-text p,
+.eight .header-text h1 {
+  color: white !important;
+}
+.eight .header-text h1 {
+  font-weight: bold !important;
+}
+.eight .header-text p {
+  font-size: 1.3rem;
+}

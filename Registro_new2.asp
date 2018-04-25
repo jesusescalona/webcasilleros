@@ -202,7 +202,7 @@ rsAgencia.Open()
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta charset="utf-8"/>
 	<title>Zaicargo - Casillero Postal</title>
 	<link href="Imagenes/estilos.css" rel="stylesheet" type="text/css" />
 	<style type="text/css">
@@ -250,8 +250,8 @@ rsAgencia.Open()
 			<div class="container">
 				<div class="sixteen columns" data-scrollreveal="enter top and move 150px over 1s">
 					<div class="header-text">
-						<div class="header-shadow-text">Afíliate</div>
-						<h1>Afíliate</h1>
+						<div class="header-shadow-text">AfÃ­liate</div>
+						<h1>AfÃ­liate</h1>
 						<p>Es totalmente gratis, suscribete a nuestro servicio, para recibir todo lo que compres en USA, nosotros te lo entregamos en la puerta de la casa u oficina.</p>
 					</div>
 				</div>
@@ -274,9 +274,9 @@ rsAgencia.Open()
 					</div>
 					<div class="clear"></div>	
 					<div class="error" id="err-state"></div>
-					segunda linea form
+					<!-- segunda linea form -->
 					<div class="eight columns">
-						<label for="name">Dirección: * 
+						<label for="name">DirecciÃ³n: * 
 							<span class="error" id="err-name">please enter name</span>
 						</label>
 						<input name="name" id="name" type="text" />
@@ -290,7 +290,7 @@ rsAgencia.Open()
 					</div>
 					<div class="clear"></div>	
 					<div class="error" id="err-state"></div>
-					3 linea form
+					<!-- 3 linea form -->
 					<div class="eight columns">
 						<label for="name">Codigo postal: * 
 							<span class="error" id="err-name">please enter name</span>
@@ -306,9 +306,9 @@ rsAgencia.Open()
 					</div>
 					<div class="clear"></div>	
 					<div class="error" id="err-state"></div>
-					4 linea form
+					<!-- 4 linea form -->
 					<div class="eight columns">
-						<label for="name">Teléfono: * 
+						<label for="name">TelÃ©fono: * 
 							<span class="error" id="err-name">please enter name</span>
 						</label>
 						<input name="name" id="name" type="text" />
@@ -322,9 +322,9 @@ rsAgencia.Open()
 					</div>
 					<div class="clear"></div>	
 					<div class="error" id="err-state"></div>
-					<div class="con"><p>Información Casilleros</p></div>
+					<div class="con"><p>InformaciÃ³n Casilleros</p></div>
 					<div class="eight columns">
-						<label for="name">Teléfono: * 
+						<label for="name">TelÃ©fono: * 
 							<span class="error" id="err-name">please enter name</span>
 						</label>
 						<select name="cas_agencia_id" class="reciboSMALLCAP" id="Select1" style="width : 100%; padding:2%;padding-top: 10px; padding-bottom: 10px; font: 13px/22px 'Open Sans', sans-serif;  ">
@@ -344,79 +344,79 @@ rsAgencia.Open()
 					</div>
 					<div class="clear"></div>	
 					<div class="error" id="err-state"></div>
-					<div class="con"><p>Términos y condiciones</p></div>
-					6 linea form
+					<div class="con"><p>TÃ©rminos y condiciones</p></div>
+					<!-- 6 linea form -->
 					<div class="sixteen columns">
 						<textarea name="textarea" cols="50" rows="6" readonly="readonly" wrap="virtual"
-						style="height:200px;">Todos los que utilicen los casilleros Postales de Zai Cargo y hagan compras a través de empresas como Amazon.com tigerdirect.com  y otras están sujetos a los siguientes términos y condiciones:
-						1-Zai cargo NO se hace responsable de ningúnenvío que recibamos:
+						style="height:200px;">Todos los que utilicen los casilleros Postales de Zai Cargo y hagan compras a travÃ©s de empresas como Amazon.com tigerdirect.com  y otras estÃ¡n sujetos a los siguientes tÃ©rminos y condiciones:
+						1-Zai cargo NO se hace responsable de ningÃºnenvÃ­o que recibamos:
 						A-Con defectos
 						B-Rotos o deteriorados
 						C-Equivocados 
-						D-Sin información correcta 
-						2-Zai cargo NO asumiráningún tipo de pago a terceros por mercancías que se reciban en nuestras bodegas.
-						3-Zai Cargo NO se hace responsable de ningún tipo de pago fraudulento realizado por la mercancía que recibamos 
-						a través del casillero postal.
+						D-Sin informaciÃ³n correcta 
+						2-Zai cargo NO asumirÃ¡ningÃºn tipo de pago a terceros por mercancÃ­as que se reciban en nuestras bodegas.
+						3-Zai Cargo NO se hace responsable de ningÃºn tipo de pago fraudulento realizado por la mercancÃ­a que recibamos 
+						a travÃ©s del casillero postal.
 						4-Todo el que acepte utilizar a Zai cargo como transportadora, acepta pagar todos los costos por Libra /seguro/
-						Impuestos exigidos por la empresa o por el país de destino.
-						5-Solo transportaremos envíos con CONTENIDOS legales en el país origen como en el país de destino cumpliendo 
+						Impuestos exigidos por la empresa o por el paÃ­s de destino.
+						5-Solo transportaremos envÃ­os con CONTENIDOS legales en el paÃ­s origen como en el paÃ­s de destino cumpliendo 
 						todas las normas aduanales exigidas.
 
 						NO podemos transportar: 
 						A-Prendas Militares.
 						B-Explosivos o Inflamables.
 						C-Contaminantes.
-						D-Dinero o Títulos Valores.
+						D-Dinero o TÃ­tulos Valores.
 						E-Aerosoles
-						F-Artículos como, Vidrio, con empaques  insuficientes para su protección.
+						F-ArtÃ­culos como, Vidrio, con empaques  insuficientes para su protecciÃ³n.
 
-						El Servicio de casillero internacional consiste en la asignación de un número de cuenta el cual habilita al subscriptor a 
-						recibir mercancía de cualquier índole dentro del marco legal. Realizar los procesos de clasificación, inspección, 
-						generación de documentación, 
-						transporte internacional, trámites aduaneros y entrega. 
+						El Servicio de casillero internacional consiste en la asignaciÃ³n de un nÃºmero de cuenta el cual habilita al subscriptor a 
+						recibir mercancÃ­a de cualquier Ã­ndole dentro del marco legal. Realizar los procesos de clasificaciÃ³n, inspecciÃ³n, 
+						generaciÃ³n de documentaciÃ³n, 
+						transporte internacional, trÃ¡mites aduaneros y entrega. 
 
-						Una vez aceptada la inscripción del servicio se asignara un número de cuenta con el cual pueden rastrear sus envíos vía 
+						Una vez aceptada la inscripciÃ³n del servicio se asignara un nÃºmero de cuenta con el cual pueden rastrear sus envÃ­os vÃ­a 
 						Web. 
 
-						Nuestra empresa se compromete a realizar los trámites aduaneros correspondientes a la Mercancía y envíos urgentes 
-						los cuales incluyen desaduana miento, reconocimiento, liberación y entrega
+						Nuestra empresa se compromete a realizar los trÃ¡mites aduaneros correspondientes a la MercancÃ­a y envÃ­os urgentes 
+						los cuales incluyen desaduana miento, reconocimiento, liberaciÃ³n y entrega
 
-						Si el SUSCRIPTOR entregara información errada sobre dirección u otros elementos necesarios para la oportuna y 
-						correcta entrega, nuestra empresa no se hará responsable de este envío y el SUSCRIPTOR correrá con los gastos extras 
+						Si el SUSCRIPTOR entregara informaciÃ³n errada sobre direcciÃ³n u otros elementos necesarios para la oportuna y 
+						correcta entrega, nuestra empresa no se harÃ¡ responsable de este envÃ­o y el SUSCRIPTOR correrÃ¡ con los gastos extras 
 						que ocasione este error. 
 
-						Las tarifas de transporte podrán ser modificadas sin previo aviso para adecuarlas a los aumentos de costos de las 
-						aerolíneas y/o cualquier otro factor comercial que tenga que ver con la prestación del servicio. La mercancía se 
-						ASEGURA para garantizar la tranquilidad al suscriptor, el seguro no opera para daños o perdidas parciales de la 
-						mercancía,todo opera en caso  que el paquete no llegue a su destino. 
+						Las tarifas de transporte podrÃ¡n ser modificadas sin previo aviso para adecuarlas a los aumentos de costos de las 
+						aerolÃ­neas y/o cualquier otro factor comercial que tenga que ver con la prestaciÃ³n del servicio. La mercancÃ­a se 
+						ASEGURA para garantizar la tranquilidad al suscriptor, el seguro no opera para daÃ±os o perdidas parciales de la 
+						mercancÃ­a,todo opera en caso  que el paquete no llegue a su destino. 
 
-						La Mercancía deberá recibirse para su envío Embalada de acuerdo a sus características, con el propósito de 
-						resguardar la misma, ya que el seguro no cubre  daños por  embalaje inapropiado. El suscriptor después que 
-						recibe la Mercancía  y firma  en conformidad  pierde el derecho de reclamar. Recomendamos abrir la Mercancía 
-						y chequear en presencia del personal de la Empresa.  Si la Mercancía requiere un embalaje especial es 
-						importante notificar a la Empresa para su elaboración.
-						Al  Suscriptor se le concede 03 días para retirar la Mercancía desde el momento de la notificación, en caso 
+						La MercancÃ­a deberÃ¡ recibirse para su envÃ­o Embalada de acuerdo a sus caracterÃ­sticas, con el propÃ³sito de 
+						resguardar la misma, ya que el seguro no cubre  daÃ±os por  embalaje inapropiado. El suscriptor despuÃ©s que 
+						recibe la MercancÃ­a  y firma  en conformidad  pierde el derecho de reclamar. Recomendamos abrir la MercancÃ­a 
+						y chequear en presencia del personal de la Empresa.  Si la MercancÃ­a requiere un embalaje especial es 
+						importante notificar a la Empresa para su elaboraciÃ³n.
+						Al  Suscriptor se le concede 03 dÃ­as para retirar la MercancÃ­a desde el momento de la notificaciÃ³n, en caso 
 						contrario la Empresa cobrara Almacenaje y no se responsabilizara por la misma. Al realizar las compras es 
-						necesario que el Suscriptor coloque su nombre propio y  la dirección de zai cargo, con la finalidad  que el 
-						pedido al llegar a la oficina se agregue  al sistema WEB. La página donde podrá rastrear sus compras es 
-						www.zaicargo.com. Nuestra empresa no es responsable por el mal direcciónamiento de la mercancía a nuestras 
-						oficinas del suscriptor entiende que debe hacer llegar la mercancía a nuestras oficinas  mediante compañías 
-						domésticas.  Las direcciónes de recibo de la mercancía pueden ser modificadas en cualquier momento, avisando 
-						a los suscriptores  para las correcciones pertinentes, con suficiente antelación. 
+						necesario que el Suscriptor coloque su nombre propio y  la direcciÃ³n de zai cargo, con la finalidad  que el 
+						pedido al llegar a la oficina se agregue  al sistema WEB. La pÃ¡gina donde podrÃ¡ rastrear sus compras es 
+						www.zaicargo.com. Nuestra empresa no es responsable por el mal direcciÃ³namiento de la mercancÃ­a a nuestras 
+						oficinas del suscriptor entiende que debe hacer llegar la mercancÃ­a a nuestras oficinas  mediante compaÃ±Ã­as 
+						domÃ©sticas.  Las direcciÃ³nes de recibo de la mercancÃ­a pueden ser modificadas en cualquier momento, avisando 
+						a los suscriptores  para las correcciones pertinentes, con suficiente antelaciÃ³n. 
 
-						El suscriptor declara conocer las restricciones legales y administrativas a que pueden estar sujetos sus envíos y será 
-						responsable por todo aquello que llegue consignado a su casillero. Nuestra empresa no se hará responsable por 
-						pérdidas  resultantes de confiscación aduanera, ni de retrasos ocasionados por la falta de documentación o 
-						información necesaria para el despacho o para el trámite aduanero. 
+						El suscriptor declara conocer las restricciones legales y administrativas a que pueden estar sujetos sus envÃ­os y serÃ¡ 
+						responsable por todo aquello que llegue consignado a su casillero. Nuestra empresa no se harÃ¡ responsable por 
+						pÃ©rdidas  resultantes de confiscaciÃ³n aduanera, ni de retrasos ocasionados por la falta de documentaciÃ³n o 
+						informaciÃ³n necesaria para el despacho o para el trÃ¡mite aduanero. 
 
-						Es prohibido Transportar : armas, precursores químicos, joyas, dinero en efectivo, material pornográfico, juguetes 
-						bélicos, billetes de lotería y todas aquellas que prohíban las autoridades correspondientes  y las contempladas como 
-						prohibidas por la Unión Postal Universal.
+						Es prohibido Transportar : armas, precursores quÃ­micos, joyas, dinero en efectivo, material pornogrÃ¡fico, juguetes 
+						bÃ©licos, billetes de loterÃ­a y todas aquellas que prohÃ­ban las autoridades correspondientes  y las contempladas como 
+						prohibidas por la UniÃ³n Postal Universal.
 
-						Nuestra empresa se reserva el derecho de rehusar o  retener envíos dirigidos a un suscriptor cuya cuenta se encuentre
+						Nuestra empresa se reserva el derecho de rehusar o  retener envÃ­os dirigidos a un suscriptor cuya cuenta se encuentre
 						en mora.
 
-						Nos reservamos el derecho de admisión y la Empresa tiene autonomía para la cancelación de cuentas en abandono, 
+						Nos reservamos el derecho de admisiÃ³n y la Empresa tiene autonomÃ­a para la cancelaciÃ³n de cuentas en abandono, 
 						inactivas o que presenten antecedentes de fraude o mal uso o uso anormal del mismo.
 
 					</textarea>
@@ -440,14 +440,14 @@ rsAgencia.Open()
 				<div class="clear"></div>
 				<div class="eight columns" data-scrollreveal="enter left and move 150px over 1s">
 					<div class="contact-wrap">
-						<p><i class="icon-contact1">&#xf095;</i><span>Télefono</span><label>(381) 267-6386</label> <small><em>Monday–Friday | 9am–5pm (GMT +1)</em></small></p>
+						<p><i class="icon-contact1">&#xf095;</i><span>TÃ©lefono</span><label>(381) 267-6386</label> <small><em>Mondayâ€“Friday | 9amâ€“5pm (GMT +1)</em></small></p>
 					</div>
 				</div>
 				<div class="eight columns" data-scrollreveal="enter right and move 150px over 1s">	
 					<div class="contact-wrap">
 						<p>
 							<i class="icon-contact1">&#xf041;</i>
-							<span>Dirección</span>
+							<span>DirecciÃ³n</span>
 							<label>First Street, Sunrise Avenue, New York, USA</label>
 						</p>	
 					</div>
@@ -456,12 +456,12 @@ rsAgencia.Open()
 		</div>
 	</div>
 	<!-- JAVASCRIPT ================================================== -->
-	<script type="text/javascript" src="js/pop.js"></script>
-	<script type="text/javascript" src="js/login.js"></script>
+	<!-- <script type="text/javascript" src="js/pop.js"></script>
+	<script type="text/javascript" src="js/login.js"></script> -->
 	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/modernizr.custom.js"></script>	 
-	<script type="text/javascript" src="js/royal_preloader.min.js"></script>
-	<script type="text/javascript">
+	<!-- <script type="text/javascript" src="js/modernizr.custom.js"></script> -->	 
+	<!-- <script type="text/javascript" src="js/royal_preloader.min.js"></script> -->
+	<!-- <script type="text/javascript">
 		(function($)
 			{ "use strict"; Royal_Preloader.config(
 			{
@@ -473,7 +473,7 @@ rsAgencia.Open()
 					background:     ['#FFFFFF']
 				});
 		})(jQuery);
-	</script>
+	</script> -->
 	<script type="text/javascript" src="js/classie.js"></script>
 	<script type="text/javascript" src="js/cbpAnimatedHeader.min.js"></script>
 	<script type="text/javascript">
@@ -507,7 +507,6 @@ rsAgencia.Open()
 	<script type="text/javascript" src="js/jquery.fancybox.js"></script>
 	<script type="text/javascript" src="js/svg_inject_flat_icons_filled.js"></script><!--Inject SVG and Toggle CSS Styles-->
 	<script type="text/javascript" src="js/contact.js"></script>
-	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 	<script type="text/javascript" src="js/plugins.js"></script>
 	<script type="text/javascript" src="js/template.js"></script>  	  
 	<!-- End Document ================================================== -->
