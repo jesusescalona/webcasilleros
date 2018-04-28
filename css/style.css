@@ -1,10 +1,12 @@
 body {
   background: transparent !important;
 }
-body div#ascrail2000 {
+body div#ascrail2000,
+body div#ascrail2000-hr {
   background: transparent !important;
 }
-body div#ascrail2000 > div {
+body div#ascrail2000 > div,
+body div#ascrail2000-hr > div {
   background: transparent !important;
 }
 a {
@@ -166,7 +168,7 @@ input[type="submit"].login:focus {
 }
 .sixteen .header-text p,
 .sixteen .header-text h1 {
-  color: black !important;
+  color: white !important;
 }
 .sixteen .header-text h1 {
   font-weight: bold !important;
@@ -193,4 +195,27 @@ input[type="submit"].login:focus {
 }
 .eight .header-text p {
   font-size: 1.3rem;
+}
+.register table {
+  width: 100% !important;
+}
+.register table textarea {
+  min-height: 200px !important;
+}
+.register input[type="button"] {
+  margin: .7rem !important;
+  padding: .4rem 1rem !important;
+}
+.register input[type="text"] {
+  margin-top: .5rem;
+  margin-right: 12rem;
+  margin-bottom: .5rem;
+  height: auto !important;
+  min-height: 20px !important;
+  padding-right: 0 !important;
+  padding-top: .47rem !important;
+  padding-bottom: .31rem !important;
+}
+.d_none {
+  display: none !important;
 }
