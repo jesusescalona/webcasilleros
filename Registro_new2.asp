@@ -257,16 +257,25 @@ rsAgencia.Open()
 				</div>
 			</div>
 			<div class="container">	
-				<form name="ajax-form" id="ajax-form" action="mail-it.php" method="post">
-					<div class="con"><p>Datos Personales</p></div>
+				<!-- <form name="ajax-form" id="ajax-form" action="mail-it.php" method="post"> -->
+				<form method="post" action="registro_new.asp?agencia=<%=request.querystring("agencia") %>" name="form1">
+					<div class="con">
+						<span class="txtTituloJ"><%=errores%></span>
+						<%if errores="El casillero se creo satisfactoriamente, " then %>
+						<p class="style1"><%=response.Write(emailBody)%></p>
+						<%else%>
+						<p>Datos Personales</p>
+					</div>
 					<div class="eight columns">
-						<label for="name">Nombres y apellidos: * 
+						<label for="name">
+							Nombres y apellidos: * 
 							<span class="error" id="err-name">please enter name</span>
 						</label>
 						<input name="name" id="name" type="text" />
 					</div>
 					<div class="eight columns">
-						<label for="email">Empresa: * 
+						<label for="email">
+							Empresa: * 
 							<span class="error" id="err-email">please enter e-mail</span>
 							<span class="error" id="err-emailvld">e-mail is not a valid format</span>
 						</label>
@@ -276,13 +285,15 @@ rsAgencia.Open()
 					<div class="error" id="err-state"></div>
 					<!-- segunda linea form -->
 					<div class="eight columns">
-						<label for="name">Dirección: * 
+						<label for="name">
+							Dirección: * 
 							<span class="error" id="err-name">please enter name</span>
 						</label>
 						<input name="name" id="name" type="text" />
 					</div>
 					<div class="eight columns">
-						<label for="email">Ciudad: * 
+						<label for="email">
+							Ciudad: * 
 							<span class="error" id="err-email">please enter e-mail</span>
 							<span class="error" id="err-emailvld">e-mail is not a valid format</span>
 						</label>
@@ -292,13 +303,15 @@ rsAgencia.Open()
 					<div class="error" id="err-state"></div>
 					<!-- 3 linea form -->
 					<div class="eight columns">
-						<label for="name">Codigo postal: * 
+						<label for="name">
+							Codigo postal: * 
 							<span class="error" id="err-name">please enter name</span>
 						</label>
 						<input name="name" id="name" type="text" />
 					</div>
 					<div class="eight columns">
-						<label for="email">E-Mail: * 
+						<label for="email">
+							E-Mail: * 
 							<span class="error" id="err-email">please enter e-mail</span>
 							<span class="error" id="err-emailvld">e-mail is not a valid format</span>
 						</label>
@@ -308,13 +321,15 @@ rsAgencia.Open()
 					<div class="error" id="err-state"></div>
 					<!-- 4 linea form -->
 					<div class="eight columns">
-						<label for="name">Teléfono: * 
+						<label for="name">
+							Teléfono: * 
 							<span class="error" id="err-name">please enter name</span>
 						</label>
 						<input name="name" id="name" type="text" />
 					</div>
 					<div class="eight columns">
-						<label for="email">fax: * 
+						<label for="email">
+							fax: * 
 							<span class="error" id="err-email">please enter e-mail</span>
 							<span class="error" id="err-emailvld">e-mail is not a valid format</span>
 						</label>
@@ -324,7 +339,8 @@ rsAgencia.Open()
 					<div class="error" id="err-state"></div>
 					<div class="con"><p>Información Casilleros</p></div>
 					<div class="eight columns">
-						<label for="name">Teléfono: * 
+						<label for="name">
+							Teléfono: * 
 							<span class="error" id="err-name">please enter name</span>
 						</label>
 						<select name="cas_agencia_id" class="reciboSMALLCAP" id="Select1" style="width : 100%; padding:2%;padding-top: 10px; padding-bottom: 10px; font: 13px/22px 'Open Sans', sans-serif;  ">
@@ -336,7 +352,8 @@ rsAgencia.Open()
 						</select>
 					</div>
 					<div class="eight columns">
-						<label for="email">digite su clave: * 
+						<label for="email">
+							digite su clave: * 
 							<span class="error" id="err-email">please enter e-mail</span>
 							<span class="error" id="err-emailvld">e-mail is not a valid format</span>
 						</label>
