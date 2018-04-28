@@ -215,20 +215,6 @@ rsAgencia.Open()
 	}
 	-->
 	</style>
-	<link rel="stylesheet" href="css/base.css"/>
-	<link rel="stylesheet" href="css/skeleton.css"/>
-	<link rel="stylesheet" href="css/layout.css"/>
-	<link rel="stylesheet" href="css/font-awesome.css"/>	
-	<link rel="stylesheet" href="css/jquery.fancybox.css"/>
-	<link rel="stylesheet" href="css/flat_filled_styles.css"><!--SVG Animation Styles-->
-	<link rel="stylesheet" href="css/retina.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
-	<script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
-	<!-- Favicons ================================================== -->
-	<link rel="shortcut icon" href="zaicon.png"/>
-	<link rel="apple-touch-icon" href="zaiconpng"/>
-	<link rel="apple-touch-icon" sizes="72x72" href="zaicon.png"/>
-	<link rel="apple-touch-icon" sizes="114x114" href="zicon.png"/>
 	<script language="JavaScript" src="https://seal.networksolutions.com/siteseal/javascript/siteseal.js" type="text/javascript"></script>
 </head>
 <script language="javascript">
@@ -245,272 +231,655 @@ rsAgencia.Open()
 			<%=(rsAgencia.Fields.Item("nombre").Value)%>
 		</div>
 	<% end if %>
-	<div id="sep1">
-		<div id="contact">
-			<div class="container">
-				<div class="sixteen columns" data-scrollreveal="enter top and move 150px over 1s">
-					<div class="header-text">
-						<div class="header-shadow-text">Afíliate</div>
-						<h1>Afíliate</h1>
-						<p>Es totalmente gratis, suscribete a nuestro servicio, para recibir todo lo que compres en USA, nosotros te lo entregamos en la puerta de la casa u oficina.</p>
+	<form method="post" action="registro_new.asp?agencia=<%=request.querystring("agencia") %>" name="form1">
+		<table width="501" border="0" align="center" cellpadding="3" cellspacing="0" class="titulos2">
+			<tr valign="baseline" >
+				<td colspan="4" align="right" nowrap>
+					<div align="left">
+						<span class="txtTituloJ"><%=errores%></span>
 					</div>
+				</td>
+			</tr>
+			<%if errores="El casillero se creo satisfactoriamente, " then %>
+			<tr valign="baseline" >
+				<td colspan="4" align="right" nowrap>
+					<div align="left" class="reciboSMALLCAP">
+						<p class="style1"><%=response.Write(emailBody)%></p>
+					</div>
+				</td>
+			</tr>
+			<%else%>	
+			<tr valign="baseline" >
+				<td colspan="4" align="right" nowrap>
+					<div class="txtTituloJ">
+						(Toda esta infomaci&oacute;n es privada y est&aacute; protegida).
+					</div>
+				</td>
+			</tr>
+			<tr valign="baseline" >
+				<td colspan="4" align="right" nowrap bgcolor="#FEDA00">
+					<div align="left" class="txtTextoNJ">
+						<strong>Datos personales </strong>
+					</div>
+				</td>
+			</tr>
+			<tr valign="baseline">
+				<td align="right" nowrap class="txtTextoJ">
+					<div align="left" class="letras">
+						Nombres y apellidos:
+						<span class="requeridos">*</span>
+					</div>
+				</td>
+				<td>
+					<div align="left">
+						<input name="cas_nombre" type="text" class="txtCajas" value="<%=request.form("cas_nombre")%>">                
+					</div>
+				</td>
+				<td class="txtTextoJ">Empresa:</td>
+				<td>
+					<div align="left">
+						<input name="cas_empresa" type="text" class="txtCajas" value="<%=request.form("cas_empresa")%>" />
+					</div>
+				</td>
+			</tr>
+			<tr valign="baseline">
+				<td align="right" nowrap class="txtTextoJ">
+					<div align="left">
+						Direccion:
+						<span class="requeridos">*</span>
+					</div>
+				</td>
+				<td>
+					<div align="left">
+						<input name="cas_direccion" type="text" class="txtCajas" value="<%=request.form("cas_direccion")%>">
+					</div>
+				</td>
+				<td class="txtTextoJ">
+					<input type="button" onclick="javascript:fp('../app/Ciudades7.asp');" value="Ciudad">
+				</td>
+				<td>
+					<div align="left">
+						<span class="txtTextoJ">
+							<span class="requeridos">
+								<input type="hidden" name="cas_ciudad_id" id="cas_ciudad_id" value="<%=request("cas_ciudad_id")%>" />
+								<input name="nomciudad" id="nomciudad" type="text" class="txtCajas" value="<%=request("nomciudad")%>" readonly="true" />
+							</span>
+						</span>
+					</div>
+				</td>
+			</tr>
+			<tr valign="baseline">
+				<td align="right" nowrap class="txtTextoJ">
+					<div align="left">
+						Codigo postal :
+						<span class="requeridos">*</span>
+					</div>
+				</td>
+				<td>
+					<div align="left">
+						<input name="cas_zip" type="text" class="txtCajas" style="margin-right:0px" value="<%=request.form("cas_zip")%>" />
+						<a href="http://visor.codigopostal.gov.co/472/visor/" target="_blank">
+							<img src="imagenes/pregunta.jpg" alt="Que es?" width="13" height="16" border="0" /></a>
+						</div>
+					</td>
+					<td class="txtTextoJ">
+						Email:
+						<span class="requeridos">*</span>
+					</td>
+					<td>
+						<div align="left">
+							<input name="cas_email" type="text" class="txtCajas" value="<%=request.form("cas_email")%>">
+						</div>
+					</td>
+				</tr>
+				<tr valign="baseline">
+					<td align="right" nowrap class="txtTextoJ">
+						<div align="left">Telefono:*</div>
+					</td>
+					<td>
+						<div align="left">
+							<input name="cas_telefono" type="text" class="txtCajas" value="<%=request.form("cas_telefono")%>">                
+						</div>
+					</td>
+					<td class="txtTextoJ">Fax:</td>
+					<td>
+						<div align="left">
+							<input name="cas_fax" type="text" class="txtCajas" value="<%=request.form("cas_fax")%>">
+						</div>
+					</td>
+				</tr>
+				<tr valign="baseline">
+					<td nowrap  class="txtTextoJ">
+						Numero Identificacion:
+						<span id="Camp_Id" class="requeridos style2" style="display:none" >*</span>
+					</td>
+					<td>
+						<input name="txt_des_id" id="txt_des_id" type="text" class="textbox" value="<%=request.form("txt_des_id")%>" size="32" />
+						<input name="hid_des_id_obligatorio" id="hid_des_id_obligatorio" type="HIDDEN" class="textbox" value="<%if request.form("hid_des_id_obligatorio")="" then %><%=0%><%else%><%=request.form("hid_des_id_obligatorio")%><%end if%>" size="32" />
+					</td>
+				</tr>
+				<tr valign="baseline">
+					<td colspan="4" align="right" nowrap>					
+						<div align="left">
+							<input type="hidden" name="cas_cuenta_id" value="" />
+							<input name="cas_pago" type="hidden" id="cas_pago" value="agencia" />
+							<input type="hidden" value="VE" name="cas_servicio" id="cas_servicio"/>
+						</div>
+					</td>
+				</tr>
+				<tr valign="baseline">
+					<td colspan="4" align="right" nowrap class="requeridos">
+						<div align="left"></div>
+					</td>
+				</tr>
+				<tr valign="baseline" >
+					<td colspan="4" align="right" nowrap bgcolor="#FEDA00">
+						<div align="left" class="txtTextoNJ">
+							<strong>Informacion del casillero </strong>
+						</div>
+					</td>
+				</tr>
+				<tr valign="baseline">
+					<td align="right" nowrap class="txtTextoJ">
+						<div align="left" class="letras">
+							Escriba su clave:
+							<span class="requeridos">*</span>
+						</div>
+					</td>
+					<td colspan="3" class="txtTextoJ">
+						<input name="cas_password" type="password" class="txtCajas" />
+						<input name="cas_alias" type="hidden" class="boxesNoCase" value=" " size="32" />
+						<input name="ccEmail" type="hidden" class="txtCajas" id="ccEmail" />
+					</td>
+				</tr>
+				<tr valign="baseline">
+					<%if request.QueryString("agencia")<>"" then %>
+					<input name="cas_agencia_id" type="hidden" class="boxesNoCase" size="32" value="<%response.Write(request.QueryString("agencia")) %>" />
+					<% else %>
+					<td align="right" nowrap class="txtTextoJ">
+						<div align="left" class="letras">Seleccione una agencia:</div>
+					</td>
+					<td colspan="3" class="txtTextoJ">
+						<select name="cas_agencia_id" class="reciboSMALLCAP" id="Select1" style="width : 100px">
+							<%
+							While (NOT rsAgencias.EOF)
+								%>
+								<option value="<%=(rsAgencias.Fields.Item("agencia_id").Value)%>"><%=(rsAgencias.Fields.Item("nombre").Value)%></option>
+								<%
+								rsAgencias.MoveNext()
+							Wend
+							If (rsAgencias.CursorType > 0) Then
+								rsAgencias.MoveFirst
+							Else
+							rsAgencias.Requery
+						End If
+						%>
+					</select>
+					<%end if %>
+				</tr>
+				<tr valign="baseline">
+					<td align="right" nowrap class="txtTextoJ"></td>
+				</tr>
+				<tr valign="baseline" >
+					<td colspan="4" align="right" nowrap bgcolor="#FEDA00" class="boxesNoCase">
+						<div align="left" class="txtTextoNJ">
+							<strong>Terminos y condiciones </strong>
+						</div>
+					</td>
+				</tr>
+				<tr valign="baseline">
+					<td colspan="4" align="right" nowrap>
+						<div align="center">
+							<textarea name="textarea" cols="50" rows="6" readonly="readonly" wrap="virtual">Todos los que utilicen los casilleros Postales de Zai Cargo y hagan compras a traves de empresas como Amazon.com ? tigerdirect.com  y otras estan sujetos a los siguientes terminos y condiciones : 
+								1-Zai cargo NO se hace responsable de ningun envio que recibamos :
+								A-Con defectos
+								B-Rotos o deteriorados
+								C-Equivocados 
+								D-Sin informacion correcta 
+								2-Zai cargo NO asumira ningun tipo de pago a terceros por mercancias que se reciban en nuestras bodegas.
+								3-Zai Cargo NO se hace responsable de ningun tipo de pago fraudulento realizado por la mercancia que recibamos a traves del casillero postal .
+								4-Todo el que acepte utilizar a Zai cargo como transportadora, acepta pagar todos los costos por Libra /seguro/Impuestos exigidos por la empresa o por el pais de destino.
+								5-Solo transportaremos envios con CONTENIDOS legales en el pais origen como en el pais de destino cumpliendo todas las normas aduanales exigidas .
+
+								NO podemos transportar : 
+								A-Prendas Militares.
+								B-Explosivos o Inflamables.
+								C-Contaminantes.
+								D-Dinero o Titulos Valores.
+								E-Aerosoles
+								F-Articulos   como ?Vidrio? con empaques  insuficientes para su proteccion.
+
+								El Servicio de casillero internacional consiste en la asignación de un número de cuenta el cual habilita al subscriptor a recibir mercancía de cualquier índole dentro del marco legal. Realizar los procesos de clasificación, inspección, generación de documentación, transporte internacional, trámites aduaneros y entrega. 
+
+								Una vez aceptada la inscripción del servicio se asignara un número de cuenta con el cual pueden rastrear sus envíos vía Web. 
+
+								Nuestra empresa se compromete a realizar los trámites aduaneros correspondientes a la Mercancía y envíos urgentes los cuales incluyen desaduanamiento, reconocimiento, liberación y entrega
+
+								Si el SUSCRIPTOR entregara información errada sobre dirección u otros elementos necesarios para la oportuna y correcta entrega, nuestra empresa no se hará responsable de este envío y el SUSCRIPTOR correrá con los gastos extras que ocasione este error. 
+
+								Las tarifas de transporte podrán ser modificadas sin previo aviso para adecuarlas a los aumentos de costos de las aerolíneas y/o cualquier otro factor comercial que tenga que ver con la prestación del servicio. La mercancía se ASEGURA para garantizar la tranquilidad al suscriptor, el seguro no opera para daños o perdidas parciales de la mercancia ,todo opera en caso que el paquete no llegue a su destino. 
+
+								La Mercancía deberá recibirse para su envío Embalada de acuerdo a sus características, con el propósito de resguardar la misma, ya que el seguro no cubre  daños por  embalaje inapropiado. El suscriptor después que recibe la Mercancía  y firma  en conformidad  pierde el derecho de reclamar. Recomendamos abrir la Mercancía y chequear en presencia del personal de la Empresa.  Si la Mercancía requiere un embalaje especial es importante notificar a la Empresa para su elaboración.
+								Al  Suscriptor se le concede 03 días para retirar la Mercancía desde el momento de la notificación, en caso contrario la Empresa cobrara Almacenaje y no se responsabilizara por la misma.
+								Al realizar las compras es necesario que el Suscriptor coloque su nombre propio y  la direccion de zai cargo  , con la finalidad  que el pedido al llegar a la oficina se agregue  al sistema WEB. La página donde podrá rastrear sus compras es www.zaicargo.com.
+								Nuestra empresa no es responsable por el mal direccionamiento de la mercancía a nuestras oficinas de , el suscriptor entiende que debe hacer llegar la mercancía a nuestras oficinas  mediante compañías domesticas. 
+								Las direcciones de recibo de la mercancía pueden ser modificadas en cualquier momento, avisando a los suscriptores  para las correcciones pertinentes, con suficiente antelación. 
+								El suscriptor declara conocer las restricciones legales y administrativas a que pueden estar sujetos sus envíos y será responsable por todo aquello que llegue consignado a su casillero. Nuestra empresa no se hará responsable por pérdidas resultantes de confiscación aduanera, ni de retrasos ocasionados por la falta de documentación o información necesaria para el despacho o para el trámite aduanero.
+								Es prohibido Transportar : armas, precursores químicos, joyas, dinero en efectivo, material pornográfico, juguetes bélicos, billetes de lotería y todas aquellas que prohíban las autoridades correspondientes  y las contempladas como prohibidas por la Unión Postal Universal.
+								Nuestra empresa se reserva el derecho de rehusar o  retener envíos dirigidos a un suscriptor cuya cuenta se encuentre en mora.
+								Nos reservamos el derecho de admisión y la Empresa tiene autonomía para la cancelación de cuentas en abandono, inactivas o que presenten antecedentes de fraude o mal uso o uso anormal del mismo.
+							</textarea>
+						</div>
+					</td>
+				</tr>
+				<tr valign="baseline">
+					<td colspan="3">
+						<input name="terminos" type="checkbox" id="terminos" value="1" checked="checked" disabled="disabled">
+						<span class="txtTituloJ">ACEPTO LOS TERMINOS Y CONDICIONES</span> 
+						<%if Trim(Request.Form("terminos"))<>"" and Trim(Request.Form("AB"))="AB" then%>
+						<span class="letraserrores"></span>
+						<span class="txtTextoJ">Debe aceptar los terminos y condiciones</span>				  
+						<% End If %>
+						<input name="AB" type="hidden" class="boxesNoCase" id="AB" value="AB" size="32">
+					</td>
+				</tr>
+				<tr valign="baseline">
+					<td nowrap align="right">
+						<input type="hidden" name="cas_ffw" value="00001" size="32">
+						<input type="hidden" name="MM_insert" value="form1">
+					</td>
+					<td align="right">
+						<input type="submit" class="botones" value="Aceptar">
+					</td>
+				</tr>
+				<%end if%>
+				<tr valign="baseline">
+					<td colspan="4" align="right" nowrap>
+						<div align="left" class="reciboSMALLCAP">
+							<p>&nbsp;</p>
+						</div>
+					</td>
+				</tr>
+		</table>
+	</form>
+	<!-- <table width="800" border="0" cellspacing="0" cellpadding="0" align="center" style="background:url(Imagenes/Body.jpg)"> -->
+		<!-- <tr style="background:url(Imagenes/Gradiente_Cabecera_Z2.png)">
+			<td colspan="2" scope="col" height="97" valign="bottom">
+				<div align="right" style="vertical-align:bottom">
+					LOGIN
+					<form action="clientes/login.asp" method="POST" name="frmaIngreso">
+						<table width="100" border="0" cellspacing="0" cellpadding="0" align="right">
+							<tr>
+								<th scope="col">
+									<span class="txtTextoI">Usuario:</span>
+								</th>
+								<th scope="col">
+									<input name="usuario" type="text" class="txtCajas" size="8" />
+								</th>
+							</tr>
+							<tr>
+								<td align="left">
+									<div align="right">
+										<span class="txtTextoI">Clave:</span>
+									</div>
+								</td>
+								<td align="left">
+									<input name="clave" type="password" class="txtCajas" size="8" />
+								</td>
+							</tr>
+							<tr>
+								<td nowrap="nowrap">
+									<a href="javascript:fp('oc.asp?id=<%=request.QueryString("agencia")%>');">
+										Olvido su clave?
+									</a>
+								</td>
+								<td align="right">
+									<input name="Ingreso" type="submit" value="Ingresar" class="btnAccion" />
+								</td>
+							</tr>
+						</table>
+					</form>
+					FIN LOGIN
 				</div>
-			</div>
-			<div class="container">	
-				<form name="ajax-form" id="ajax-form" action="mail-it.php" method="post">
-					<div class="con"><p>Datos Personales</p></div>
-					<div class="eight columns">
-						<label for="name">Nombres y apellidos: * 
-							<span class="error" id="err-name">please enter name</span>
-						</label>
-						<input name="name" id="name" type="text" />
-					</div>
-					<div class="eight columns">
-						<label for="email">Empresa: * 
-							<span class="error" id="err-email">please enter e-mail</span>
-							<span class="error" id="err-emailvld">e-mail is not a valid format</span>
-						</label>
-						<input name="email" id="email" type="text" />
-					</div>
-					<div class="clear"></div>	
-					<div class="error" id="err-state"></div>
-					segunda linea form
-					<div class="eight columns">
-						<label for="name">Dirección: * 
-							<span class="error" id="err-name">please enter name</span>
-						</label>
-						<input name="name" id="name" type="text" />
-					</div>
-					<div class="eight columns">
-						<label for="email">Ciudad: * 
-							<span class="error" id="err-email">please enter e-mail</span>
-							<span class="error" id="err-emailvld">e-mail is not a valid format</span>
-						</label>
-						<input name="email" id="email" type="text" />
-					</div>
-					<div class="clear"></div>	
-					<div class="error" id="err-state"></div>
-					3 linea form
-					<div class="eight columns">
-						<label for="name">Codigo postal: * 
-							<span class="error" id="err-name">please enter name</span>
-						</label>
-						<input name="name" id="name" type="text" />
-					</div>
-					<div class="eight columns">
-						<label for="email">E-Mail: * 
-							<span class="error" id="err-email">please enter e-mail</span>
-							<span class="error" id="err-emailvld">e-mail is not a valid format</span>
-						</label>
-						<input name="email" id="email" type="text" />
-					</div>
-					<div class="clear"></div>	
-					<div class="error" id="err-state"></div>
-					4 linea form
-					<div class="eight columns">
-						<label for="name">Teléfono: * 
-							<span class="error" id="err-name">please enter name</span>
-						</label>
-						<input name="name" id="name" type="text" />
-					</div>
-					<div class="eight columns">
-						<label for="email">fax: * 
-							<span class="error" id="err-email">please enter e-mail</span>
-							<span class="error" id="err-emailvld">e-mail is not a valid format</span>
-						</label>
-						<input name="email" id="email" type="text" />
-					</div>
-					<div class="clear"></div>	
-					<div class="error" id="err-state"></div>
-					<div class="con"><p>Información Casilleros</p></div>
-					<div class="eight columns">
-						<label for="name">Teléfono: * 
-							<span class="error" id="err-name">please enter name</span>
-						</label>
-						<select name="cas_agencia_id" class="reciboSMALLCAP" id="Select1" style="width : 100%; padding:2%;padding-top: 10px; padding-bottom: 10px; font: 13px/22px 'Open Sans', sans-serif;  ">
-							<option value="8026">ZAI CARGO CP</option>
-							<option value="8730">NISSI BOX</option>
-							<option value="8998">MILLENNIALS SHOP</option>
-							<option value="7754">MASTER SHOP</option>
-							<option value="8496">ECUAPOSTAL S.A</option>
-						</select>
-					</div>
-					<div class="eight columns">
-						<label for="email">digite su clave: * 
-							<span class="error" id="err-email">please enter e-mail</span>
-							<span class="error" id="err-emailvld">e-mail is not a valid format</span>
-						</label>
-						<input name="cas_password" id="email" type="password" />
-					</div>
-					<div class="clear"></div>	
-					<div class="error" id="err-state"></div>
-					<div class="con"><p>Términos y condiciones</p></div>
-					6 linea form
-					<div class="sixteen columns">
-						<textarea name="textarea" cols="50" rows="6" readonly="readonly" wrap="virtual"
-						style="height:200px;">Todos los que utilicen los casilleros Postales de Zai Cargo y hagan compras a través de empresas como Amazon.com tigerdirect.com  y otras están sujetos a los siguientes términos y condiciones:
-						1-Zai cargo NO se hace responsable de ningúnenvío que recibamos:
-						A-Con defectos
-						B-Rotos o deteriorados
-						C-Equivocados 
-						D-Sin información correcta 
-						2-Zai cargo NO asumiráningún tipo de pago a terceros por mercancías que se reciban en nuestras bodegas.
-						3-Zai Cargo NO se hace responsable de ningún tipo de pago fraudulento realizado por la mercancía que recibamos 
-						a través del casillero postal.
-						4-Todo el que acepte utilizar a Zai cargo como transportadora, acepta pagar todos los costos por Libra /seguro/
-						Impuestos exigidos por la empresa o por el país de destino.
-						5-Solo transportaremos envíos con CONTENIDOS legales en el país origen como en el país de destino cumpliendo 
-						todas las normas aduanales exigidas.
+				<a href="http://www.zaicargo.com" target="_blank">
+					<img src="Imagenes/Banner_Superior_Master_Logo.png" alt="Zaicargo" width="119" height="60" border="0" />
+				</a>
+			</td>
+		</tr> -->
+		<!-- <tr>
+			<th colspan="2" scope="col">
+				<img src="Imagenes/Division.png" alt="Head" width="800" height="1"  />
+			</th>
+		</tr> -->
+		<!-- <tr>
+			<th colspan="2" scope="col">
+				<img src="Imagenes/Banner_Registro.jpg" alt="Casillero" width="800" height="250" />
+			</th>
+		</tr> -->
+		<!-- <tr bgcolor="#3086BC"> -->
+			<!-- <td valign="top">
+				<table width="200" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+				<th scope="col">
+					<a href="http://www.zaicargo.com/casillero_postal">Home</a>
+				</th>
+				</tr>
+				</table>
+				<table border="0" cellspacing="0" cellpadding="0" align="center">
+					<tr>
+						<td>
+							<div class="AuthorizeNetSeal">
+								<script type="text/javascript" language="javascript">
+									var ANS_customer_id="25e0789c-90dc-4aa3-b188-360d55b8894e";
+								</script>
+								<script type="text/javascript" language="javascript" src="//verify.authorize.net/anetseal/seal.js"></script>
+								<a href="http://www.authorize.net/" id="AuthorizeNetText" target="_blank">Online Payments</a>
+							</div>
+							<script language="JavaScript" type="text/javascript">
+								SiteSeal("https://seal.networksolutions.com/images/basicrecblue.gif", "NETSB", "none");
+							</script>
+						</td>
+					</tr>
+				</table>
+			</td> -->
+			<!-- <td bgcolor="#3086BC" style="vertical-align:top">
+				<table width="600" border="0" cellspacing="0" cellpadding="0" style="background:url(Imagenes/Body.jpg)" height="216">
+					<tr valign="top">
+						<th scope="col">
+							<img src="Imagenes/CabeceraRegistro.png" alt="Head" width="600" height="20" />
+						</th>
+					</tr>
+					<tr>
+						<th scope="col"> -->
+							<!-- REGISTRO AGENCIA -->
+							<!-- <form method="post" action="registro.asp?agencia=<%=request.querystring("agencia") %>" name="form1">
+								<table width="501" border="0" align="center" cellpadding="3" cellspacing="0" class="titulos2">
+									<tr valign="baseline" >
+										<td colspan="4" align="right" nowrap>
+											<div align="left">
+												<span class="txtTituloJ"><%=errores%></span>
+											</div>
+										</td>
+									</tr>
+									<%if errores="El casillero se creo satisfactoriamente, " then %>
+										<tr valign="baseline" >
+											<td colspan="4" align="right" nowrap>
+												<div align="left" class="reciboSMALLCAP">
+													<p class="style1"><%=response.Write(emailBody)%></p>
+												</div>
+											</td>
+										</tr>
+									<%else%>	
+										<tr valign="baseline" >
+											<td colspan="4" align="right" nowrap>
+												<div class="txtTituloJ">
+													(Toda esta infomaci&oacute;n es privada y est&aacute; protegida).
+												</div>
+											</td>
+										</tr>
+										<tr valign="baseline" >
+											<td colspan="4" align="right" nowrap bgcolor="#FEDA00">
+												<div align="left" class="txtTextoNJ">
+													<strong>Datos personales </strong>
+												</div>
+											</td>
+										</tr>
+										<tr valign="baseline">
+											<td align="right" nowrap class="txtTextoJ">
+												<div align="left" class="letras">
+													Nombres y apellidos:
+													<span class="requeridos">*</span>
+												</div>
+											</td>
+											<td>
+												<div align="left">
+													<input name="cas_nombre" type="text" class="txtCajas" value="<%=request.form("cas_nombre")%>">                
+												</div>
+											</td>
+											<td class="txtTextoJ">Empresa:</td>
+											<td>
+												<div align="left">
+													<input name="cas_empresa" type="text" class="txtCajas" value="<%=request.form("cas_empresa")%>" />
+												</div>
+											</td>
+										</tr>
+										<tr valign="baseline">
+											<td align="right" nowrap class="txtTextoJ">
+												<div align="left">
+													Direccion:
+													<span class="requeridos">*</span>
+												</div>
+											</td>
+											<td>
+												<div align="left">
+													<input name="cas_direccion" type="text" class="txtCajas" value="<%=request.form("cas_direccion")%>">
+												</div>
+											</td>
+											<td class="txtTextoJ">
+												<input type="button" onclick="javascript:fp('../app/Ciudades7.asp');" value="Ciudad">
+											</td>
+											<td>
+												<div align="left">
+													<span class="txtTextoJ">
+														<span class="requeridos">
+															<input type="hidden" name="cas_ciudad_id" id="cas_ciudad_id" value="<%=request("cas_ciudad_id")%>" />
+															<input name="nomciudad" id="nomciudad" type="text" class="txtCajas" value="<%=request("nomciudad")%>" readonly="true" />
+														</span>
+													</span>
+												</div>
+											</td>
+										</tr>
+										<tr valign="baseline">
+											<td align="right" nowrap class="txtTextoJ">
+												<div align="left">
+													Codigo postal :
+													<span class="requeridos">*</span>
+												</div>
+											</td>
+											<td>
+												<div align="left">
+													<input name="cas_zip" type="text" class="txtCajas" style="margin-right:0px" value="<%=request.form("cas_zip")%>" />
+													<a href="http://visor.codigopostal.gov.co/472/visor/" target="_blank">
+													<img src="imagenes/pregunta.jpg" alt="Que es?" width="13" height="16" border="0" /></a>
+												</div>
+											</td>
+											<td class="txtTextoJ">
+												Email:
+												<span class="requeridos">*</span>
+											</td>
+											<td>
+												<div align="left">
+													<input name="cas_email" type="text" class="txtCajas" value="<%=request.form("cas_email")%>">
+												</div>
+											</td>
+										</tr>
+										<tr valign="baseline">
+											<td align="right" nowrap class="txtTextoJ">
+												<div align="left">Telefono:*</div>
+											</td>
+											<td>
+												<div align="left">
+													<input name="cas_telefono" type="text" class="txtCajas" value="<%=request.form("cas_telefono")%>">                
+												</div>
+											</td>
+											<td class="txtTextoJ">Fax:</td>
+											<td>
+												<div align="left">
+													<input name="cas_fax" type="text" class="txtCajas" value="<%=request.form("cas_fax")%>">
+												</div>
+											</td>
+										</tr>
+										<tr valign="baseline">
+											<td nowrap  class="txtTextoJ">
+												Numero Identificacion:
+												<span id="Camp_Id" class="requeridos style2" style="display:none" >*</span>
+											</td>
+											<td>
+												<input name="txt_des_id" id="txt_des_id" type="text" class="textbox" value="<%=request.form("txt_des_id")%>" size="32" />
+												<input name="hid_des_id_obligatorio" id="hid_des_id_obligatorio" type="HIDDEN" class="textbox" value="<%if request.form("hid_des_id_obligatorio")="" then %><%=0%><%else%><%=request.form("hid_des_id_obligatorio")%><%end if%>" size="32" />
+											</td>
+										</tr>
+										<tr valign="baseline">
+											<td colspan="4" align="right" nowrap>					
+												<div align="left">
+													<input type="hidden" name="cas_cuenta_id" value="" />
+													<input name="cas_pago" type="hidden" id="cas_pago" value="agencia" />
+													<input type="hidden" value="VE" name="cas_servicio" id="cas_servicio"/>
+												</div>
+											</td>
+										</tr>
+										<tr valign="baseline">
+											<td colspan="4" align="right" nowrap class="requeridos">
+												<div align="left"></div>
+											</td>
+										</tr>
+										<tr valign="baseline" >
+											<td colspan="4" align="right" nowrap bgcolor="#FEDA00">
+												<div align="left" class="txtTextoNJ">
+													<strong>Informacion del casillero </strong>
+												</div>
+											</td>
+										</tr>
+										<tr valign="baseline">
+											<td align="right" nowrap class="txtTextoJ">
+												<div align="left" class="letras">
+													Escriba su clave:
+													<span class="requeridos">*</span>
+												</div>
+											</td>
+											<td colspan="3" class="txtTextoJ">
+												<input name="cas_password" type="password" class="txtCajas" />
+												<input name="cas_alias" type="hidden" class="boxesNoCase" value=" " size="32" />
+												<input name="ccEmail" type="hidden" class="txtCajas" id="ccEmail" />
+											</td>
+										</tr>
+										<tr valign="baseline">
+											<%if request.QueryString("agencia")<>"" then %>
+												<input name="cas_agencia_id" type="hidden" class="boxesNoCase" size="32" value="<%response.Write(request.QueryString("agencia")) %>" />
+											<% else %>
+											<td align="right" nowrap class="txtTextoJ">
+												<div align="left" class="letras">Seleccione una agencia:</div>
+											</td>
+											<td colspan="3" class="txtTextoJ">
+											<select name="cas_agencia_id" class="reciboSMALLCAP" id="Select1" style="width : 100px">
+												<%
+													While (NOT rsAgencias.EOF)
+												%>
+													<option value="<%=(rsAgencias.Fields.Item("agencia_id").Value)%>"><%=(rsAgencias.Fields.Item("nombre").Value)%></option>
+												<%
+													rsAgencias.MoveNext()
+													Wend
+													If (rsAgencias.CursorType > 0) Then
+													rsAgencias.MoveFirst
+													Else
+													rsAgencias.Requery
+													End If
+												%>
+											</select>
+											<%end if %>
+										</tr>
+										<tr valign="baseline">
+											<td align="right" nowrap class="txtTextoJ"></td>
+										</tr>
+										<tr valign="baseline" >
+											<td colspan="4" align="right" nowrap bgcolor="#FEDA00" class="boxesNoCase">
+												<div align="left" class="txtTextoNJ">
+													<strong>Terminos y condiciones </strong>
+												</div>
+											</td>
+										</tr>
+										<tr valign="baseline">
+											<td colspan="4" align="right" nowrap>
+												<div align="center">
+													<textarea name="textarea" cols="50" rows="6" readonly="readonly" wrap="virtual">Todos los que utilicen los casilleros Postales de Zai Cargo y hagan compras a traves de empresas como Amazon.com ? tigerdirect.com  y otras estan sujetos a los siguientes terminos y condiciones : 
+														1-Zai cargo NO se hace responsable de ningun envio que recibamos :
+														A-Con defectos
+														B-Rotos o deteriorados
+														C-Equivocados 
+														D-Sin informacion correcta 
+														2-Zai cargo NO asumira ningun tipo de pago a terceros por mercancias que se reciban en nuestras bodegas.
+														3-Zai Cargo NO se hace responsable de ningun tipo de pago fraudulento realizado por la mercancia que recibamos a traves del casillero postal .
+														4-Todo el que acepte utilizar a Zai cargo como transportadora, acepta pagar todos los costos por Libra /seguro/Impuestos exigidos por la empresa o por el pais de destino.
+														5-Solo transportaremos envios con CONTENIDOS legales en el pais origen como en el pais de destino cumpliendo todas las normas aduanales exigidas .
 
-						NO podemos transportar: 
-						A-Prendas Militares.
-						B-Explosivos o Inflamables.
-						C-Contaminantes.
-						D-Dinero o Títulos Valores.
-						E-Aerosoles
-						F-Artículos como, Vidrio, con empaques  insuficientes para su protección.
+														NO podemos transportar : 
+														A-Prendas Militares.
+														B-Explosivos o Inflamables.
+														C-Contaminantes.
+														D-Dinero o Titulos Valores.
+														E-Aerosoles
+														F-Articulos   como ?Vidrio? con empaques  insuficientes para su proteccion.
 
-						El Servicio de casillero internacional consiste en la asignación de un número de cuenta el cual habilita al subscriptor a 
-						recibir mercancía de cualquier índole dentro del marco legal. Realizar los procesos de clasificación, inspección, 
-						generación de documentación, 
-						transporte internacional, trámites aduaneros y entrega. 
+														El Servicio de casillero internacional consiste en la asignación de un número de cuenta el cual habilita al subscriptor a recibir mercancía de cualquier índole dentro del marco legal. Realizar los procesos de clasificación, inspección, generación de documentación, transporte internacional, trámites aduaneros y entrega. 
 
-						Una vez aceptada la inscripción del servicio se asignara un número de cuenta con el cual pueden rastrear sus envíos vía 
-						Web. 
+														Una vez aceptada la inscripción del servicio se asignara un número de cuenta con el cual pueden rastrear sus envíos vía Web. 
 
-						Nuestra empresa se compromete a realizar los trámites aduaneros correspondientes a la Mercancía y envíos urgentes 
-						los cuales incluyen desaduana miento, reconocimiento, liberación y entrega
+														Nuestra empresa se compromete a realizar los trámites aduaneros correspondientes a la Mercancía y envíos urgentes los cuales incluyen desaduanamiento, reconocimiento, liberación y entrega
 
-						Si el SUSCRIPTOR entregara información errada sobre dirección u otros elementos necesarios para la oportuna y 
-						correcta entrega, nuestra empresa no se hará responsable de este envío y el SUSCRIPTOR correrá con los gastos extras 
-						que ocasione este error. 
+														Si el SUSCRIPTOR entregara información errada sobre dirección u otros elementos necesarios para la oportuna y correcta entrega, nuestra empresa no se hará responsable de este envío y el SUSCRIPTOR correrá con los gastos extras que ocasione este error. 
 
-						Las tarifas de transporte podrán ser modificadas sin previo aviso para adecuarlas a los aumentos de costos de las 
-						aerolíneas y/o cualquier otro factor comercial que tenga que ver con la prestación del servicio. La mercancía se 
-						ASEGURA para garantizar la tranquilidad al suscriptor, el seguro no opera para daños o perdidas parciales de la 
-						mercancía,todo opera en caso  que el paquete no llegue a su destino. 
+														Las tarifas de transporte podrán ser modificadas sin previo aviso para adecuarlas a los aumentos de costos de las aerolíneas y/o cualquier otro factor comercial que tenga que ver con la prestación del servicio. La mercancía se ASEGURA para garantizar la tranquilidad al suscriptor, el seguro no opera para daños o perdidas parciales de la mercancia ,todo opera en caso que el paquete no llegue a su destino. 
 
-						La Mercancía deberá recibirse para su envío Embalada de acuerdo a sus características, con el propósito de 
-						resguardar la misma, ya que el seguro no cubre  daños por  embalaje inapropiado. El suscriptor después que 
-						recibe la Mercancía  y firma  en conformidad  pierde el derecho de reclamar. Recomendamos abrir la Mercancía 
-						y chequear en presencia del personal de la Empresa.  Si la Mercancía requiere un embalaje especial es 
-						importante notificar a la Empresa para su elaboración.
-						Al  Suscriptor se le concede 03 días para retirar la Mercancía desde el momento de la notificación, en caso 
-						contrario la Empresa cobrara Almacenaje y no se responsabilizara por la misma. Al realizar las compras es 
-						necesario que el Suscriptor coloque su nombre propio y  la dirección de zai cargo, con la finalidad  que el 
-						pedido al llegar a la oficina se agregue  al sistema WEB. La página donde podrá rastrear sus compras es 
-						www.zaicargo.com. Nuestra empresa no es responsable por el mal direcciónamiento de la mercancía a nuestras 
-						oficinas del suscriptor entiende que debe hacer llegar la mercancía a nuestras oficinas  mediante compañías 
-						domésticas.  Las direcciónes de recibo de la mercancía pueden ser modificadas en cualquier momento, avisando 
-						a los suscriptores  para las correcciones pertinentes, con suficiente antelación. 
-
-						El suscriptor declara conocer las restricciones legales y administrativas a que pueden estar sujetos sus envíos y será 
-						responsable por todo aquello que llegue consignado a su casillero. Nuestra empresa no se hará responsable por 
-						pérdidas  resultantes de confiscación aduanera, ni de retrasos ocasionados por la falta de documentación o 
-						información necesaria para el despacho o para el trámite aduanero. 
-
-						Es prohibido Transportar : armas, precursores químicos, joyas, dinero en efectivo, material pornográfico, juguetes 
-						bélicos, billetes de lotería y todas aquellas que prohíban las autoridades correspondientes  y las contempladas como 
-						prohibidas por la Unión Postal Universal.
-
-						Nuestra empresa se reserva el derecho de rehusar o  retener envíos dirigidos a un suscriptor cuya cuenta se encuentre
-						en mora.
-
-						Nos reservamos el derecho de admisión y la Empresa tiene autonomía para la cancelación de cuentas en abandono, 
-						inactivas o que presenten antecedentes de fraude o mal uso o uso anormal del mismo.
-
-					</textarea>
-					<tr valign="baseline">
-						<td nowrap="" align="right">&nbsp;</td>
-						<td colspan="3">
-							<span class="txtTituloJ"><input name="terminos" type="checkbox" id="terminos" value="1" checked="checked" disabled="disabled">ACEPTO LOS TERMINOS Y CONDICIONES</span> 
-							<input name="AB" type="hidden" class="boxesNoCase" id="AB" value="AB" size="32"></td>
-						</tr>
-					</div>
-					<div class="three columns">
-						<div id="button-con"><button class="send_message" id="send">Submit</button></div>
-					</div>
-					<div class="clear"></div>	
-					<div class="error text-align-center" id="err-form">There was a problem validating the form please check!</div>
-					<div class="error text-align-center" id="err-timedout">The connection to the server timed out!</div>
-					<div class="error" id="err-state"></div>
-				</form>	
-				<div class="clear"></div>
-				<div id="ajaxsuccess">Successfully sent!!</div>	
-				<div class="clear"></div>
-				<div class="eight columns" data-scrollreveal="enter left and move 150px over 1s">
-					<div class="contact-wrap">
-						<p><i class="icon-contact1">&#xf095;</i><span>Télefono</span><label>(381) 267-6386</label> <small><em>Monday–Friday | 9am–5pm (GMT +1)</em></small></p>
-					</div>
-				</div>
-				<div class="eight columns" data-scrollreveal="enter right and move 150px over 1s">	
-					<div class="contact-wrap">
-						<p>
-							<i class="icon-contact1">&#xf041;</i>
-							<span>Dirección</span>
-							<label>First Street, Sunrise Avenue, New York, USA</label>
-						</p>	
-					</div>
-				</div>	
-			</div>
-		</div>
-	</div>
-	<!-- JAVASCRIPT ================================================== -->
-	<script type="text/javascript" src="js/pop.js"></script>
-	<script type="text/javascript" src="js/login.js"></script>
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/modernizr.custom.js"></script>	 
-	<script type="text/javascript" src="js/royal_preloader.min.js"></script>
-	<script type="text/javascript">
-		(function($)
-			{ "use strict"; Royal_Preloader.config(
-			{
-					mode:           'text', // 'number', "text" or "logo"
-					text:           'Zaibox.net',
-					timeout:        0,
-					showInfo:       true,
-					opacity:        1,
-					background:     ['#FFFFFF']
-				});
-		})(jQuery);
-	</script>
-	<script type="text/javascript" src="js/classie.js"></script>
-	<script type="text/javascript" src="js/cbpAnimatedHeader.min.js"></script>
-	<script type="text/javascript">
-		(function($)
-		{ 
-			"use strict";
-			var pos = 0;
-
-			window.setInterval(function()
-			{
-				pos++;
-				document.getElementsByClassName('parallax-home')[0].style.backgroundPosition = pos + "px 0px";
-			}, 40);
-		})(jQuery);
-	</script>
-	<script type="text/javascript" src="js/retina-1.1.0.min.js"></script>
-	<script type="text/javascript" src="js/jquery.easing.js"></script> 
-	<script type="text/javascript" src="js/flippy.js"></script>
-	<script type="text/javascript" src="js/jquery.fitvids.js"></script>
-	<script type="text/javascript" src="js/tiltSlider.js"></script>
-	<script>
-		(function($)
-		{
-			"use strict";
-			new TiltSlider( document.getElementById( 'slideshow' ) );
-		})(jQuery);
-	</script>
-	<script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
-	<script type="text/javascript" src="js/jquery.localscroll-1.2.7-min.js"></script>
-	<script type="text/javascript" src="js/jquery.scrollTo-1.4.2-min.js"></script>
-	<script type="text/javascript" src="js/jquery.fancybox.js"></script>
-	<script type="text/javascript" src="js/svg_inject_flat_icons_filled.js"></script><!--Inject SVG and Toggle CSS Styles-->
-	<script type="text/javascript" src="js/contact.js"></script>
-	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-	<script type="text/javascript" src="js/plugins.js"></script>
-	<script type="text/javascript" src="js/template.js"></script>  	  
-	<!-- End Document ================================================== -->
+														La Mercancía deberá recibirse para su envío Embalada de acuerdo a sus características, con el propósito de resguardar la misma, ya que el seguro no cubre  daños por  embalaje inapropiado. El suscriptor después que recibe la Mercancía  y firma  en conformidad  pierde el derecho de reclamar. Recomendamos abrir la Mercancía y chequear en presencia del personal de la Empresa.  Si la Mercancía requiere un embalaje especial es importante notificar a la Empresa para su elaboración.
+														Al  Suscriptor se le concede 03 días para retirar la Mercancía desde el momento de la notificación, en caso contrario la Empresa cobrara Almacenaje y no se responsabilizara por la misma.
+														Al realizar las compras es necesario que el Suscriptor coloque su nombre propio y  la direccion de zai cargo  , con la finalidad  que el pedido al llegar a la oficina se agregue  al sistema WEB. La página donde podrá rastrear sus compras es www.zaicargo.com.
+														Nuestra empresa no es responsable por el mal direccionamiento de la mercancía a nuestras oficinas de , el suscriptor entiende que debe hacer llegar la mercancía a nuestras oficinas  mediante compañías domesticas. 
+														Las direcciones de recibo de la mercancía pueden ser modificadas en cualquier momento, avisando a los suscriptores  para las correcciones pertinentes, con suficiente antelación. 
+														El suscriptor declara conocer las restricciones legales y administrativas a que pueden estar sujetos sus envíos y será responsable por todo aquello que llegue consignado a su casillero. Nuestra empresa no se hará responsable por pérdidas resultantes de confiscación aduanera, ni de retrasos ocasionados por la falta de documentación o información necesaria para el despacho o para el trámite aduanero.
+														Es prohibido Transportar : armas, precursores químicos, joyas, dinero en efectivo, material pornográfico, juguetes bélicos, billetes de lotería y todas aquellas que prohíban las autoridades correspondientes  y las contempladas como prohibidas por la Unión Postal Universal.
+														Nuestra empresa se reserva el derecho de rehusar o  retener envíos dirigidos a un suscriptor cuya cuenta se encuentre en mora.
+														Nos reservamos el derecho de admisión y la Empresa tiene autonomía para la cancelación de cuentas en abandono, inactivas o que presenten antecedentes de fraude o mal uso o uso anormal del mismo.
+													</textarea>
+												</div>
+											</td>
+										</tr>
+										<tr valign="baseline">
+											<td colspan="3">
+												<input name="terminos" type="checkbox" id="terminos" value="1" checked="checked" disabled="disabled">
+												<span class="txtTituloJ">ACEPTO LOS TERMINOS Y CONDICIONES</span> 
+												<%if Trim(Request.Form("terminos"))<>"" and Trim(Request.Form("AB"))="AB" then%>
+													<span class="letraserrores"></span>
+													<span class="txtTextoJ">Debe aceptar los terminos y condiciones</span>				  
+												<% End If %>
+												<input name="AB" type="hidden" class="boxesNoCase" id="AB" value="AB" size="32">
+											</td>
+										</tr>
+										<tr valign="baseline">
+											<td nowrap align="right">
+												<input type="hidden" name="cas_ffw" value="00001" size="32">
+												<input type="hidden" name="MM_insert" value="form1">
+											</td>
+											<td align="right">
+												<input type="submit" class="botones" value="Aceptar">
+											</td>
+										</tr>
+									<%end if%>
+									<tr valign="baseline">
+										<td colspan="4" align="right" nowrap>
+											<div align="left" class="reciboSMALLCAP">
+												<p>&nbsp;</p>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</form> -->
+							<!-- FIN REGISTRO AGENCIA -->
+						<!-- </th>
+					</tr>
+				</table>
+			</td>
+		</tr> -->
+		<!-- <tr>
+			<th colspan="2" scope="col">
+				<img src="Imagenes/Division.png" alt="Head" width="800" height="1" />
+			</th>
+		</tr> -->
+		<!-- <tr>
+			<td colspan="2">
+				<img src="Imagenes/Footer.png" alt="Footer" width="800" height="30" />
+			</td>
+		</tr> -->
+	<!-- </table> -->
 </body>
 </html>
 <%
