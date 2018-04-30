@@ -340,7 +340,7 @@ rsAgencia.Open()
 						</div>
 					</td>
 					<td>
-						<div align="left">
+						<div align="left" class="postal_code">
 							<input name="cas_zip" type="text" class="txtCajas" style="margin-right:0px" value="<%=request.form("cas_zip")%>" />
 							<a href="http://visor.codigopostal.gov.co/472/visor/" target="_blank">
 								<img src="imagenes/pregunta.jpg" alt="Que es?" width="13" height="16" border="0" /></a>
@@ -382,18 +382,13 @@ rsAgencia.Open()
 							<input name="hid_des_id_obligatorio" id="hid_des_id_obligatorio" type="HIDDEN" class="textbox" value="<%if request.form("hid_des_id_obligatorio")="" then %><%=0%><%else%><%=request.form("hid_des_id_obligatorio")%><%end if%>" size="32" />
 						</td>
 					</tr>
-					<tr valign="baseline">
+					<tr valign="baseline" class="d_none">
 						<td colspan="4" align="right" nowrap>					
 							<div align="left">
 								<input type="hidden" name="cas_cuenta_id" value="" />
 								<input name="cas_pago" type="hidden" id="cas_pago" value="agencia" />
 								<input type="hidden" value="VE" name="cas_servicio" id="cas_servicio"/>
 							</div>
-						</td>
-					</tr>
-					<tr valign="baseline">
-						<td colspan="4" align="right" nowrap class="requeridos">
-							<div align="left"></div>
 						</td>
 					</tr>
 					<tr valign="baseline" >
@@ -403,7 +398,7 @@ rsAgencia.Open()
 							</div>
 						</td>
 					</tr>
-					<tr valign="baseline">
+					<tr valign="baseline" class="locker">
 						<td align="right" nowrap class="txtTextoJ">
 							<div align="left" class="letras">
 								Escriba su clave:
@@ -416,7 +411,7 @@ rsAgencia.Open()
 							<input name="ccEmail" type="hidden" class="txtCajas" id="ccEmail" />
 						</td>
 					</tr>
-					<tr valign="baseline">
+					<tr valign="baseline" class="locker">
 						<%if request.QueryString("agencia")<>"" then %>
 						<input name="cas_agencia_id" type="hidden" class="boxesNoCase" size="32" value="<%response.Write(request.QueryString("agencia")) %>" />
 						<% else %>
@@ -440,9 +435,6 @@ rsAgencia.Open()
 							%>
 						</select>
 						<%end if %>
-					</tr>
-					<tr valign="baseline">
-						<td align="right" nowrap class="txtTextoJ"></td>
 					</tr>
 					<tr valign="baseline" >
 						<td colspan="4" align="right" nowrap bgcolor="#FEDA00" class="boxesNoCase">
@@ -507,7 +499,7 @@ rsAgencia.Open()
 							<input name="AB" type="hidden" class="boxesNoCase" id="AB" value="AB" size="32">
 						</td>
 					</tr>
-					<tr valign="baseline">
+					<tr valign="baseline" class="d_none">
 						<td nowrap align="right" class="d_none">
 							<input type="hidden" name="cas_ffw" value="00001" size="32">
 							<input type="hidden" name="MM_insert" value="form1">
