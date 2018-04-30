@@ -250,8 +250,8 @@ rsAgencia.Open()
 			<div class="container">
 				<div class="sixteen columns" data-scrollreveal="enter top and move 150px over 1s">
 					<div class="header-text">
-						<div class="header-shadow-text">Afíliate</div>
-						<h1>Afíliate</h1>
+						<div class="header-shadow-text">Afíliate Gratis</div>
+						<h1>Afíliate Gratis</h1>
 						<p>Es totalmente gratis, suscribete a nuestro servicio, para recibir todo lo que compres en USA, nosotros te lo entregamos en la puerta de la casa u oficina.</p>
 					</div>
 				</div>
