@@ -340,7 +340,7 @@ rsAgencia.Open()
 						</div>
 					</td>
 					<td>
-						<div align="left">
+						<div align="left" class="postal_code">
 							<input name="cas_zip" type="text" class="txtCajas" style="margin-right:0px" value="<%=request.form("cas_zip")%>" />
 							<a href="http://visor.codigopostal.gov.co/472/visor/" target="_blank">
 								<img src="imagenes/pregunta.jpg" alt="Que es?" width="13" height="16" border="0" /></a>
@@ -403,7 +403,7 @@ rsAgencia.Open()
 							</div>
 						</td>
 					</tr>
-					<tr valign="baseline">
+					<tr valign="baseline" class="locker">
 						<td align="right" nowrap class="txtTextoJ">
 							<div align="left" class="letras">
 								Escriba su clave:
@@ -416,7 +416,7 @@ rsAgencia.Open()
 							<input name="ccEmail" type="hidden" class="txtCajas" id="ccEmail" />
 						</td>
 					</tr>
-					<tr valign="baseline">
+					<tr valign="baseline" class="locker">
 						<%if request.QueryString("agencia")<>"" then %>
 						<input name="cas_agencia_id" type="hidden" class="boxesNoCase" size="32" value="<%response.Write(request.QueryString("agencia")) %>" />
 						<% else %>
